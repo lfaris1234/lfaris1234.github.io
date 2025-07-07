@@ -2,58 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lily Faris – Computer Scientist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lily Faris · Computer Scientist</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
 </head>
 <body>
   <header>
-    <h1>Lily Faris</h1>
-    <p>Computer Scientist · AI Researcher · Sustainability Advocate</p>
-    <nav>
-      <a href="#projects">Projects</a>
-      <a href="resume.pdf" target="_blank">Resume</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="container">
+      <h1>Lily Faris</h1>
+      <p class="tagline">AI + Sustainability · Computer Vision · Thoughtful Design</p>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="resume.pdf" target="_blank">Resume</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <section id="about">
-    <h2>About Me</h2>
+  <section id="about" class="container fade-in">
+    <h2>Hi, I'm Lily 👋</h2>
     <p>
-      I'm a recent UC Santa Cruz Computer Science MS grad passionate about ethical AI, computer vision, and environmental justice. 
-      I’ve led research on sustainable food systems, built LLM-powered applications, and debugged neural occlusion models just for fun.
+      I’m a computer scientist blending AI and sustainability. From debugging neural occlusion models to building food-wise
+      chatbots, I design with intention and a touch of wit.
+    </p>
+    <p>
+      I recently completed my MS at UCSC, and I’m looking for roles where I can push the boundaries of responsible AI, visual learning, and technical elegance.
     </p>
   </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project">
+  <section id="projects" class="container fade-in">
+    <h2>Featured Projects</h2>
+    <div class="project-card">
       <h3>RootWise</h3>
       <p>
-        A conversational AI system that offers zero-waste, seasonal cooking advice using visual ingredient recognition and RAG. 
-        Built with FAISS, Gradio, and NVIDIA’s embedding APIs.
+        An AI system that gives seasonal, zero-waste cooking advice using visual ingredient recognition, vector search (FAISS), and language model grounding.
       </p>
-      <a href="https://github.com/lfaris1234/RootWise" target="_blank">View on GitHub</a>
+      <a href="https://github.com/lfaris1234/RootWise" target="_blank" class="cta">View on GitHub</a>
     </div>
-    <div class="project">
-      <h3>Occluded Object Recognition Research</h3>
+    <div class="project-card">
+      <h3>Occlusion Benchmarking</h3>
       <p>
-        Benchmarked vision transformers for robustness to natural occlusions using patch-based, shadow-based, and real-world masks.
+        Benchmarked vision transformers using synthetic and natural occlusions. Explored resilience in ResNet, ViT, and shadow-aware augmentation strategies.
       </p>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
+  <section id="contact" class="container fade-in">
+    <h2>Let's Connect</h2>
     <p>
-      Email: <a href="mailto:lily.faris@example.com">lily.faris@example.com</a><br />
-      GitHub: <a href="https://github.com/lfaris1234" target="_blank">lfaris1234</a><br />
-      LinkedIn: <a href="https://linkedin.com/in/lilyfaris" target="_blank">lilyfaris</a>
+      Reach out if you’re working on something exciting, thoughtful, or green.
     </p>
+    <ul>
+      <li>Email: <a href="mailto:lily.faris@example.com">lily.faris@example.com</a></li>
+      <li>GitHub: <a href="https://github.com/lfaris1234" target="_blank">lfaris1234</a></li>
+      <li>LinkedIn: <a href="https://linkedin.com/in/lilyfaris" target="_blank">linkedin.com/in/lilyfaris</a></li>
+    </ul>
   </section>
 
   <footer>
-    <p>© 2025 Lily Faris</p>
+    <div class="container">
+      <p>© 2025 Lily Faris · Made with curiosity + clean code</p>
+    </div>
   </footer>
 </body>
 </html>
