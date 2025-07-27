@@ -23,19 +23,37 @@
   </header>
 
   <script>
-    window.addEventListener('scroll', function() {
-      const pic = document.getElementById('profile-pic');
-      const maxScale = 1.3; // how big it gets at the top
-      const minScale = 0.7; // how small it gets when scrolled down
-      const scrollY = window.scrollY;
-      const maxScroll = 200; // adjust for sensitivity
+    const pic = document.getElementById('profile-pic');
+    const maxScale = 1.3;
+    const minScale = 0.7;
+    const hoverBoost = 0.2; // how much bigger on hover
+    const maxScroll = 200;
+    let currentScale = maxScale;
 
-      // Calculate scale based on scroll position
+    function updateScale(extra = 0) {
+      const scrollY = window.scrollY;
       let scale = maxScale - (scrollY / maxScroll) * (maxScale - minScale);
       scale = Math.max(minScale, Math.min(maxScale, scale));
+      currentScale = scale + extra;
+      pic.style.transform = `scale(${currentScale})`;
+    }
 
-      pic.style.transform = `scale(${scale})`;
+    window.addEventListener('scroll', () => {
+      updateScale(pic.classList.contains('hovered') ? hoverBoost : 0);
     });
+
+    pic.addEventListener('mouseenter', () => {
+      pic.classList.add('hovered');
+      updateScale(hoverBoost);
+    });
+
+    pic.addEventListener('mouseleave', () => {
+      pic.classList.remove('hovered');
+      updateScale(0);
+    });
+
+    // Initialize on load
+    updateScale();
   </script>
 
   <section id="about" class="container fade-in">

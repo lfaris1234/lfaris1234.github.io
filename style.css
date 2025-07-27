@@ -32,8 +32,12 @@
 }
 
 .profile-pic {
-  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
+}
+.profile-pic.hovered {
+  /* This will further increase the scale when hovered */
+  z-index: 2;
 }
 
 body {
