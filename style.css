@@ -8,6 +8,29 @@
   --card-bg: #ffffff;
 }
 
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-text {
+  flex: 2;
+}
+
+.about-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.intro-pic {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
 .profile-pic {
   transition: transform 0.3s ease;
   will-change: transform;
