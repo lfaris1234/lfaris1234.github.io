@@ -1,4 +1,4 @@
-/* Base Setup */
+
 :root {
   --primary: #255933;
   --accent: #2E6F40;
@@ -6,6 +6,11 @@
   --text: #2e2e2e;
   --muted: #777;
   --card-bg: #ffffff;
+}
+
+.profile-pic {
+  transition: transform 0.3s ease;
+  will-change: transform;
 }
 
 body {
