@@ -182,3 +182,17 @@ footer {
   margin-left: auto;
   margin-right: auto;
 }
+
+#contact ul li {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+#contact a {
+  text-decoration: none;
+  color: #4a90e2;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
