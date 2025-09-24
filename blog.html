@@ -5,72 +5,125 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lily's Blog</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-      background: #fafafa;
+    :root{
+      --bg:#0f172a;          /* slate-900 */
+      --surface:#0b1226;     /* slightly darker for page edge */
+      --card:#0b1226;        /* card background */
+      --text:#e5e7eb;        /* slate-200 */
+      --muted:#94a3b8;       /* slate-400 */
+      --border:#1f2937;      /* slate-800 */
+      --ring:#38bdf8;        /* sky-400 */
+      --travel:#22d3ee;      /* cyan-400 */
+      --sustain:#34d399;     /* emerald-400 */
+      --essay:#fbbf24;       /* amber-400 */
     }
-    h1 {
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 0.5rem;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      margin:0; background: radial-gradient(1200px 800px at 10% -10%, #111827 0%, var(--bg) 60%);
+      color:var(--text);
     }
-    .card {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      transition: transform 0.1s ease;
+    .wrap{max-width:860px; margin:0 auto; padding:32px 20px 56px}
+    header h1{
+      font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+      letter-spacing:.2px; margin:0 0 8px 0; font-weight:750
     }
-    .card:hover {
-      transform: translateY(-3px);
+    header p{margin:0; color:var(--muted)}
+
+    /* Card list */
+    .list{margin-top:28px; display:grid; gap:18px}
+
+    a.card{ /* whole card is a link */
+      display:block; position:relative; border:1px solid var(--border); border-left-width:6px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.0));
+      border-radius:14px; padding:18px 18px 16px; text-decoration:none; color:inherit;
+      box-shadow: 0 8px 22px rgba(0,0,0,.25);
+      transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+      outline: none;
     }
-    .card h2 {
-      margin: 0 0 0.25rem 0;
-    }
-    .timestamp {
-      color: #777;
-      font-size: 0.85em;
-      margin-bottom: 0.75rem;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
+    a.card:focus-visible{ box-shadow: 0 0 0 3px rgba(56,189,248,.35), 0 10px 24px rgba(0,0,0,.35);}
+    a.card:hover{ transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,.35);}
+
+    /* Accent rails */
+    .travel{ border-left-color: var(--travel); }
+    .sustain{ border-left-color: var(--sustain); }
+    .essay{ border-left-color: var(--essay); }
+
+    .card h2{ margin:0 0 6px 0; font-size: clamp(1.15rem, 2vw, 1.35rem); font-weight:700 }
+    .meta{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:10px; color:var(--muted); font-size:.9rem }
+
+    .badge{ display:inline-flex; align-items:center; gap:6px; padding:2px 10px; border-radius:999px; border:1px solid currentColor; font-size:.78rem; letter-spacing:.15px }
+    .badge.travel { color: var(--travel); background: color-mix(in srgb, var(--travel) 12%, transparent); }
+    .badge.sustain{ color: var(--sustain); background: color-mix(in srgb, var(--sustain) 12%, transparent); }
+    .badge.essay  { color: var(--essay);  background: color-mix(in srgb, var(--essay) 12%, transparent); }
+
+    .excerpt{ color:#cbd5e1; line-height:1.55; margin:0 0 12px }
+
+    .actions{ display:flex; gap:10px; align-items:center }
+    .btn{ display:inline-block; border:1px solid var(--border); padding:8px 12px; border-radius:10px; font-size:.9rem; line-height:1; text-decoration:none; color:var(--text); }
+    .btn:hover{ border-color: var(--ring); box-shadow: 0 0 0 3px rgba(56,189,248,.15) inset }
+
+    /* Back link */
+    .topbar{ display:flex; justify-content:space-between; align-items:center; margin-top:14px }
+    .back{ border:1px solid var(--border); padding:8px 12px; border-radius:10px; text-decoration:none; color:var(--text)}
+    .back:hover{ border-color:var(--ring)}
+
+    /* Small screens: keep comfy spacing */
+    @media (max-width:560px){
+      .wrap{ padding:22px 16px 40px }
+      .meta{ font-size:.86rem }
+      .btn{ font-size:.88rem }
     }
   </style>
 </head>
 <body>
-  <h1>What's been going on!</h1>
-
-  <a href="greece-post.html">
-    <div class="card">
-      <h2>International Debugging Sidequest</h2>
-      <div class="timestamp">July-August, 2025</div>
-      <p>Tech by the sea, this summer I traveled to Greece!</p>
+  <div class="wrap">
+    <div class="topbar">
+      <header>
+        <h1>What's been going on!</h1>
+        <p>Notes on building, learning, and the occasional travel debug.</p>
+      </header>
+      <a class="back" href="index.html">← Back</a>
     </div>
-  </a>
 
-  <a href="farmers-market.html">
-    <div class="card">
-      <h2>The Santa Cruz Farmers Market is my Muse</h2>
-      <div class="timestamp">July 10, 2025</div>
-      <p>From Farmers Market to Functional Medicine: How working Sunday mornings at the market inspired a chatbot that supports sustainability and health equity...</p>
-    </div>
-  </a>
+    <div class="list">
+      <a class="card travel" href="greece-post.html">
+        <h2>International Debugging Sidequest</h2>
+        <div class="meta">
+          <span class="timestamp">July–August, 2025</span>
+          <span class="badge travel">Travel</span>
+        </div>
+        <p class="excerpt">Tech by the sea — this summer I traveled to Greece and turned ferry delays into focused sprints.</p>
+        <div class="actions">
+          <span class="btn">Read post</span>
+        </div>
+      </a>
 
-  <a href="art-cs-essay.html">
-    <div class="card">
-      <h2>Art and Code</h2>
-      <div class="timestamp"></div>
-      <p>An essay on how creativity and computer science fuel each other... (click to read more)</p>
+      <a class="card sustain" href="farmers-market.html">
+        <h2>The Santa Cruz Farmers Market is my Muse</h2>
+        <div class="meta">
+          <span class="timestamp">July 10, 2025</span>
+          <span class="badge sustain">Sustainability</span>
+        </div>
+        <p class="excerpt">From farmers market to functional medicine: how Sunday mornings inspired a chatbot for sustainability and health equity.</p>
+        <div class="actions">
+          <span class="btn">Read post</span>
+        </div>
+      </a>
+
+      <a class="card essay" href="art-cs-essay.html">
+        <h2>Art and Code</h2>
+        <div class="meta">
+          <span class="timestamp">Undated</span>
+          <span class="badge essay">Essay</span>
+        </div>
+        <p class="excerpt">An essay on how creativity and computer science fuel each other — where sketches meet systems.</p>
+        <div class="actions">
+          <span class="btn">Read post</span>
+        </div>
+      </a>
     </div>
-  </a>
+  </div>
 </body>
-
-<a href="index.html">
-  <h2>go back</h2>
-</a>
 </html>
