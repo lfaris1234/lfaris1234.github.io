@@ -79,6 +79,17 @@ nav {
   justify-content: center;
 }
 
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
 .dropdown {
   position: relative;
 }
@@ -120,17 +131,6 @@ nav {
 
 .dropdown:hover .dropdown-menu {
   display: block;
-}
-
-nav a {
-  color: white;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-nav a:hover {
-  text-decoration: underline;
 }
 
 h2 {
